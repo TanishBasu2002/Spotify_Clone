@@ -1,4 +1,5 @@
 "use client";
+import LikeButton from '@/components/LikeButton';
 import MediaItem from '@/components/MediaItem';
 import { Song } from '@/types';
 import React from 'react'
@@ -35,6 +36,7 @@ interface SearchContentProps {
                 data={song}
               />
             </div>
+            <LikeButton songId={song.id}/>
           </div>
         ))}
       </div>
