@@ -7,11 +7,12 @@ import UserProvider from '@/providers/UserProvider'
 import ModalProvider from '@/providers/ModalProvider'
 import ToasterProvider from '@/providers/ToasterProvider'
 import getSongsByUserId from '@/actions/getSongsByUserId'
+import Player from '@/components/Player'
 
 const font = Figtree({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Soptify',
+  title: 'Soptify-Listen to All',
   description: 'Listen to All The Music',
 };
 export const relative=0;
@@ -32,6 +33,7 @@ export default async function RootLayout({
             <Sidebar songs={userSongs}>
               {children}
             </Sidebar>
+            <Player/>
           </UserProvider> 
         </SupabaseProvider>
         </body>
