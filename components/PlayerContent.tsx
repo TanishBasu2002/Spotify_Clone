@@ -108,10 +108,12 @@ const PlayerContent: React.FC<PlayerContentProps> = ({ song, songUrl}) => {
         </div>
         {/**Mobile View start*/}
         <div className="flex md:hidden col-auto w-full justify-end items-center" >
+        <AiFillStepBackward onClick={onPlayPrevious} size={30} className="text-neutral-400 text-white transition"/>
           <div onClick={handlePlay} className="h-10 w-10 flex items-center  justify-center  rounded-full bg-white  p-1 cursor-pointer "
           >
             <Icon size={30} className="text-black" />
           </div>
+          <AiFillStepForward onClick={onPlayNext} size={30} className="text-neutral-400 text-white transition"/>
         </div>
         {/**Mobile View end*/}
         {/**Desktop View Start*/}
@@ -129,6 +131,7 @@ const PlayerContent: React.FC<PlayerContentProps> = ({ song, songUrl}) => {
 
           </div>
         </div>
+        {/**Desktop View End*/}
     </div>
   )
 }
