@@ -3,7 +3,7 @@ import Button from '@/components/Button'
 import Header from '@/components/Header'
 import React from 'react'
 import toast from 'react-hot-toast'
-
+export const revalidate=0;
 const Account = () => {
     
     return (
