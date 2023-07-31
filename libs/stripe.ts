@@ -1,0 +1,1 @@
+/**Stripe will be integrated */
