@@ -45,10 +45,10 @@ const Header:React.FC<HeaderProps>= ({children,className}) => {
             {/*Mobile nav */}
             <div className="flex md:hidden gap-x-2 items-center">
                 <button className="rounded-full p-2 bg-white flex items-center justify-center hover:opacity-75 transition">
-                    <HiHome className="text-black" size={20}/>
+                    <HiHome onClick={() => router.push('/')} className="text-black" size={20}/>
                 </button>
                 <button className="rounded-full p-2 bg-white flex items-center justify-center hover:opacity-75 transition">
-                    <BiSearch className="text-black" size={20}/>
+                    <BiSearch onClick={() => router.push('/search')} className="text-black" size={20}/>
                 </button>
             </div>
             <div className="flex justify-between items-center gap-x-4">
