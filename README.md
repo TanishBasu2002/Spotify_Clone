@@ -2,6 +2,8 @@
 
 This is a repository for a Full Stack Spotify Clone with Next.js 13.4 App Router: React, Tailwind, Supabase, PostgreSQL
 
+![Image](./public/images/spotify.png)
+
 Key Features:
 
 - Song Upload
