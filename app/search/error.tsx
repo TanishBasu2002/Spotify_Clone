@@ -1,15 +1,15 @@
-"use client"
+"use client";
 
-import Box from "@/components/Box"
+import Box from "@/components/Box";
 
-const error = () => {
-  return (
-    <Box className="h-full flex items-center">
-        <div className="text-neutral-400">
-            Somthing Went Wrong.
-        </div>
+const Error = () => {
+  return ( 
+    <Box className="h-full flex items-center justify-center">
+      <div className="text-neutral-400">
+        Something went wrong.
+      </div>
     </Box>
-  )
+  );
 }
-
-export default error
+ 
+export default Error;

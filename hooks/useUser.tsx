@@ -1,7 +1,9 @@
-/* eslint-disable react-hooks/exhaustive-deps */
-
 import { useEffect, useState, createContext, useContext } from 'react';
-import {useUser as useSupaUser,useSessionContext,User} from '@supabase/auth-helpers-react';
+import {
+  useUser as useSupaUser,
+  useSessionContext,
+  User
+} from '@supabase/auth-helpers-react';
 
 import { UserDetails, Subscription } from '@/types';
 
@@ -33,10 +35,14 @@ export const MyUserContextProvider = (props: Props) => {
   const [userDetails, setUserDetails] = useState<UserDetails | null>(null);
   const [subscription, setSubscription] = useState<Subscription | null>(null);
 
-
   const getUserDetails = () => supabase.from('users').select('*').single();
   const getSubscription = () =>
-    supabase.from('subscriptions').select('*, prices(*, products(*))').in('status', ['trialing', 'active']).single();
+    supabase
+      .from('subscriptions')
+      .select('*, prices(*, products(*))')
+      .in('status', ['trialing', 'active'])
+      .single();
+
   useEffect(() => {
     if (user && !isLoadingData && !userDetails && !subscription) {
       setIsloadingData(true);
@@ -58,9 +64,15 @@ export const MyUserContextProvider = (props: Props) => {
       setUserDetails(null);
       setSubscription(null);
     }
-  }, [user, isLoadingUser, isLoadingData, userDetails, subscription, getUserDetails, getSubscription]);
+  }, [user, isLoadingUser]);
 
-  const value = {accessToken,user,userDetails,isLoading: isLoadingUser || isLoadingData,subscription};
+  const value = {
+    accessToken,
+    user,
+    userDetails,
+    isLoading: isLoadingUser || isLoadingData,
+    subscription
+  };
 
   return <UserContext.Provider value={value} {...props} />;
 };
