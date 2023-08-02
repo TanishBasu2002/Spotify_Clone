@@ -1,6 +1,8 @@
-# Full Stack Spotify Clone with Next.js 13.4.13 App Router: React, Tailwind, Supabase, PostgreSQL
+# Full Stack Spotify Clone with Next.js 13.4.13 App Router: React, Tailwind, Supabase, PostgreSQL,Stripe
 
-This is a repository for a Full Stack Spotify Clone with Next.js 13.4 App Router: React, Tailwind, Supabase, PostgreSQL
+to use the upload feature use the stripe <a href="https://stripe.com/docs/testing">test cards</a> 
+
+This is a repository for a Full Stack Spotify Clone with Next.js 13.4 App Router: React, Tailwind, Supabase, PostgreSQL ,Stripe
 
 Key Features:
 
@@ -21,6 +23,7 @@ Key Features:
 - How to write POST, GET, and DELETE routes in route handlers ( app/ api )
 - How to fetch data in server React components by directly accessing the database (WITHOUT API! like Magic!)
 - Handling relations between Server and Child components in a real-time environment
+- Payment with stripe
 
 ### Prerequisites
 
