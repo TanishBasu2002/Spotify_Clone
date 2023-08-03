@@ -14,6 +14,9 @@ import { useUser } from "@/hooks/useUser";
 import usePlayer from "@/hooks/usePlayer";
 
 import Button from "./Button";
+import { AiOutlinePlus } from "react-icons/ai";
+import useUploadModal from "@/hooks/useUploadModal";
+import useSubscribeModal from "@/hooks/useSubscribeModal";
 
 interface HeaderProps {
   children: React.ReactNode;
@@ -27,9 +30,10 @@ const Header: React.FC<HeaderProps> = ({
   const player = usePlayer();
   const router = useRouter();
   const authModal = useAuthModal();
-
+  const uploadModal = useUploadModal();
+  const subscribeModal = useSubscribeModal();
   const supabaseClient = useSupabaseClient();
-  const { user } = useUser();
+  const { user,subscription } = useUser();
 
   const handleLogout = async () => {
     const { error } = await supabaseClient.auth.signOut();
@@ -40,7 +44,17 @@ const Header: React.FC<HeaderProps> = ({
       toast.error(error.message);
     }
   }
+  const onClick = () => {
+    if (!user) {
+      return authModal.onOpen();
+    }
 
+    if (!subscription) {
+      return subscribeModal.onOpen();
+    }
+
+    return uploadModal.onOpen();
+  }
   return (
     <div
       className={twMerge(`
@@ -84,6 +98,7 @@ const Header: React.FC<HeaderProps> = ({
             <RxCaretRight className="text-white" size={35} />
           </button>
         </div>
+        {/**Nav on Mobile Start */}
         <div className="flex md:hidden gap-x-2 items-center">
           <button 
             onClick={() => router.push('/')} 
@@ -117,7 +132,23 @@ const Header: React.FC<HeaderProps> = ({
           >
             <BiSearch className="text-black" size={20} />
           </button>
+          <button 
+            onClick={onClick}
+            className="
+              rounded-full 
+              p-2 
+              bg-white 
+              flex 
+              items-center 
+              justify-center 
+              cursor-pointer 
+              hover:opacity-75 
+              transition
+            "
+          ><AiOutlinePlus  size={20} className="text-black"/></button>
+          
         </div>
+        {/**Nav on Mobile End */}
         <div className="flex justify-between items-center gap-x-4">
           {user ? (
             <div className="flex gap-x-4 items-center">
