@@ -106,7 +106,7 @@ const PlayerContent: React.FC<PlayerContentProps> = ({
             <LikeButton songId={song.id} />
           </div>
         </div>
-
+        {/**mobile view start */}
         <div 
           className="
             flex 
@@ -117,6 +117,16 @@ const PlayerContent: React.FC<PlayerContentProps> = ({
             items-center
           "
         >
+          <AiFillStepBackward
+            onClick={onPlayPrevious}
+            size={30} 
+            className="
+              text-neutral-400 
+              cursor-pointer 
+              hover:text-white 
+              transition
+            "
+          />
           <div 
             onClick={handlePlay} 
             className="
@@ -133,8 +143,19 @@ const PlayerContent: React.FC<PlayerContentProps> = ({
           >
             <Icon size={30} className="text-black" />
           </div>
+          <AiFillStepForward
+            onClick={onPlayNext}
+            size={30} 
+            className="
+              text-neutral-400 
+              cursor-pointer 
+              hover:text-white 
+              transition
+            " 
+          />
         </div>
-
+      {/**mobile view end */}
+    {/**desktop view start */}
         <div 
           className="
             hidden
@@ -198,7 +219,7 @@ const PlayerContent: React.FC<PlayerContentProps> = ({
             />
           </div>
         </div>
-
+        {/**desktop view end */}
       </div>
    );
 }
