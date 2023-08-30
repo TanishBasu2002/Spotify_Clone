@@ -29,11 +29,7 @@ Key Features:
 
 **Node version 18.13.0**
 
-### Cloning the repository
-
-```shell
-git clone https://github.com/AntonioErdeljac/next13-spotify.git
-```
+### Cloning the repository 
 
 ### Install packages
 
