@@ -2,11 +2,15 @@
   "name": "spotify-clone",
   "version": "0.1.0",
   "private": true,
+  "lint-staged": {
+    "**/*": "prettier --write --ignore-unknown"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@radix-ui/react-dialog": "^1.0.4",
@@ -42,6 +46,9 @@
   },
   "devDependencies": {
     "@types/uniqid": "^5.3.2",
+    "husky": "^8.0.3",
+    "lint-staged": "^15.2.0",
+    "prettier": "3.1.1",
     "supabase": "^1.77.9"
   }
 }
